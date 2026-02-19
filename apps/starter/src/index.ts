@@ -1,5 +1,13 @@
+import { getClient } from "./xrpl-client"
+
+const client = getClient();
+
 const main = async () => {
-  console.log("It works!")
+  await client.connect();
+
+  console.log("It works!");
+
+  await client.disconnect();
 }
 
 main()
